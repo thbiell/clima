@@ -17,14 +17,14 @@ const WeatherChart = ({yDomain, values, hours, color}) => {
 
     return(
         <Chart
-  style={{ height: 200, width: 390 }}
+  style={{ height: 200, width: '100vw' }}
   data={data}
   padding={{ left: 40, bottom: 20, right: 20, top: 20 }}
   xDomain={{ min: 0, max: 48 }}
   yDomain={yDomain}
 >
   <VerticalAxis tickCount={11} theme={{ labels: { formatter: (v) => v.toFixed(2) } }} />
-  <HorizontalAxis tickCount={13} theme={{ labels: { formatter: (i) => dateFormater(hours[i]) } }}/>
+  <HorizontalAxis tickCount={9} theme={{ labels: { formatter: (i) => dateFormater(hours[i]) } }}/>
   <Area theme={{ gradient: { from: { color: color.from }, to: { color: color.to} }}} />
   <Line theme={{ stroke: { color: color.line, width: 5 } }} />
 </Chart>
